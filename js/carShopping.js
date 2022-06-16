@@ -25,7 +25,6 @@ function generatorProducts (array) {
         html += `<div class="card-producto">
         <div class="img-producto">
                 <img src="${array[i].img}" alt="...">
-            
             <div class="modal fade" id="productoDetalle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
@@ -167,9 +166,12 @@ function sumPrice(dataShopingCar) {
     `<h4>Precio Total : <b>$${price}</b></h4>
     `
     let button = 
-    `        
-        <button type="button" class="btn colorbutton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    `   <button type="button" class="btn colorbutton" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Comprar
+        </button>
+        </button>
+        <button type="button" onclick="remuvecarrito()" class="btn btn-secondary" data-bs-toggle="modal">
+            Vaciar Carrito
         </button>
     `
       
@@ -199,9 +201,14 @@ function sumPrice(dataShopingCar) {
 }
 
 function remuve(id) {
-    localStorage.clear();
-   alert('LA COMPRA SE REALIZO CON EXITO.');
+   localStorage.clear();
+   alert('La compra se realizo con éxito');
    location.reload();
+}
+function remuvecarrito(id) {
+    localStorage.clear();
+    alert("El carrito se vacio con éxito");
+    location.reload();
 }
 
 generatorProducts (data);
